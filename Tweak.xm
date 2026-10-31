@@ -8,7 +8,7 @@ static double const kFakeLongitude = 37.6173;
 %hook CLLocationManager
 
 - (CLLocation *)location {
-    CLLocation *realLoc = %orig;
+    %orig;
     return [[CLLocation alloc] initWithLatitude:kFakeLatitude longitude:kFakeLongitude];
 }
 
